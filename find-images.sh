@@ -42,19 +42,17 @@ track_collection_extract_images() {
 
   if [ "${NUMBER_OF_IMAGES}" -gt 0 ]
   then 
-    cat "${TMP_DIR}/image-urls.txt" | xargs preston track ${OPTS}
+    cat "${TMP_DIR}/image-urls.txt" | xargs -L25 preston track ${OPTS}
   fi
 }
 
 build_image_archive() {
 
-  preston alias ${OPTS} --log tsv\
-  | grep "${CATALOG_NUMBER}"\
+  preston ls ${OPTS}\
   | grep jpg\
-  | cut -f1,3\
+  | grep -oP "hash[^>]+"\
   | sort\
   | uniq\
-  | cut -f2\
   | tee ${TMP_DIR}/image-hashes.txt\
   | nl -n rz\
   | parallel --col-sep '\t' "preston cat ${OPTS} {2} > ${TMP_DIR}/{1}-${CATALOG_NUMBER}.jpg"
