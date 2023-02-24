@@ -1,4 +1,4 @@
-# Big Bee Type Image Generator
+# Bee Type Specimen Image Finder and Collector
 
 This repository helps to generate cc0 licensed images of type specimen in the Big Bee collection family. 
 
