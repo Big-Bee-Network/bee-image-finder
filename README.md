@@ -1,6 +1,6 @@
-# Big Bee Image Sequence Generator
+# Big Bee Type Image Generator
 
-This repository helps to generate image sequence of specimen following Big Bee image sequence naming conventions and creates an archive of the image sequence.
+This repository helps to generate cc0 licensed images of type specimen in the Big Bee collection family. 
 
 Checkout the [samples](#animated-gifs).
 
@@ -8,7 +8,6 @@ Checkout the [samples](#animated-gifs).
 
  * linux, mac os x, or Windows Subsystem for Linux https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux
  * Preston https://github.com/bio-guoda/preston
- * ffmpeg 
  * zip
  * jq 
  * parallel
@@ -17,7 +16,7 @@ Checkout the [samples](#animated-gifs).
 
 
 ```
-./create-imageseq [catalog number] [dwca URL]
+./find-and-get-images [catalog number] [dwca URL]
 ```
 
 where 
@@ -26,7 +25,7 @@ where
 
 and
 
-`dwca URL` is location of the Darwin Core Archive that includes a specimen with the catalog number 
+`dwca/rss URL` is location of the Darwin Core Archive or RSS feed of Darwin Core Archives that includes a specimen with the catalog number 
 
 This can be combines with other programs like `cat` to generate image sequences for a list of catalogNumbers:
 
@@ -45,7 +44,7 @@ cat catalogNumbers.txt\
 
 ## Results
 
-If found, image sequence data products will be available in folder `dist/[catalog number]/` . 
+If found, images of type specimen will be available in folder `dist/[catalog number]/` . 
 
 ## Publication
 
@@ -54,7 +53,7 @@ The distributions are optimized for publication to Zenodo. See https://github.co
 ## Example
 
 ```
-./create-imageseq "UCSB-IZC00012194" "https://library.big-bee.net/portal/content/dwca/UCSB-IZC_DwC-A.zip"
+./find-and-get-image "UCSB-IZC00012194" "https://library.big-bee.net/portal/content/dwca/UCSB-IZC_DwC-A.zip"
 ```
 
 produced the following flat (Zenodo compatible) output in the `dist/UCSB-IZC00012194` folder as shown below.
