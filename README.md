@@ -31,15 +31,17 @@ This can be combines with other programs like `cat` to generate image sequences 
 
 ```
 cat catalogNumbers.txt\
- | xargs -L1 ./create-imsageseq 
+ | xargs -L1 ./find-images.sh 
 ```
 
 or, if you'd like to do it in parallel:
 
 ```
 cat catalogNumbers.txt\
- | parallel ./create-imageseq {1}
+ | parallel ./find-images.sh {1}
 ```
+Note that the catalog numbers are consist of a type specimen in bee families Andrenidae, Apidae, Colletidae, Halictidae, Megachilidae, Melittidae, and Stenotritidae, in California Academy of Sciences Entomology Type collections that had images on 2023-02-24. 
+
 
 
 ## Results
