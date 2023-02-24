@@ -1,6 +1,6 @@
 # Bee Image Finder
 
-This repository helps to generate cc0 licensed images of type specimen in the Big Bee collection family. 
+This repository helps to generate cc0 licensed images of (type) specimen in the Big Bee collection family. 
 
 Checkout the [samples](#animated-gifs).
 
@@ -16,7 +16,7 @@ Checkout the [samples](#animated-gifs).
 
 
 ```
-./find-and-get-images [catalog number] [dwca URL]
+./find-images [catalog number] [dwca URL]
 ```
 
 where 
