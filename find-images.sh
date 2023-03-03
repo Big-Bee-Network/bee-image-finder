@@ -83,7 +83,7 @@ generate_label
 preston export ${OPTS} -p directoryDepth0 ${DIST_DIR} 
 
 append_readme() {
-  tee --append ${DIST_DIR}/README.md
+  tee -a ${DIST_DIR}/README.md
 }
 
 echo -e "# ${CATALOG_NUMBER}\nThis package contains image sequences exacted from specimen with catalog number ${CATALOG_NUMBER} as extract from ${DWC_URL} using tools like Preston, zip and ffmpeg.\n ## Provenance\n" | append_readme
