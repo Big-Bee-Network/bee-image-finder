@@ -61,10 +61,10 @@ build_image_archive() {
 
   zip --junk-paths "${BEE_IMAGE_ZIP}" ${TMP_DIR}/*.jpg
 
-  BEE_IMAGE_ZIP_HASH=$(preston track ${OPTS} "file://$PWD/${BEE_IMAGE_ZIP}" | grep hasVersion | grep -o -P "hash://sha256/[a-f0-9]{64}")
+  BEE_IMAGE_ZIP_HASH=$(preston track ${OPTS} "file://$PWD/${BEE_IMAGE_ZIP}" | grep hasVersion | grep -oE "hash://sha256/[a-f0-9]{64}")
 
   # record the content of this script
-  SCRIPT_HASH=$(preston track ${OPTS} "file://$PWD/$0" | grep hasVersion | grep -o -P "hash://sha256/[a-f0-9]{64}")
+  SCRIPT_HASH=$(preston track ${OPTS} "file://$PWD/$0" | grep hasVersion | grep -oE "hash://sha256/[a-f0-9]{64}")
 
   cat ${TMP_DIR}/image-hashes.txt\
   | xargs -I{} echo "<$BEE_IMAGE_ZIP_HASH> <http://www.w3.org/ns/prov#wasDerivedFrom> <{}> ."\
