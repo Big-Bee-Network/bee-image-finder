@@ -50,7 +50,7 @@ build_image_archive() {
 
   preston ls ${OPTS}\
   | grep jpg\
-  | grep -oP "hash[^>]+"\
+  | grep -oE "hash[^>]+"\
   | sort\
   | uniq\
   | tee ${TMP_DIR}/image-hashes.txt\
