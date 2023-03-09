@@ -31,7 +31,7 @@ track_collection_extract_images() {
 
   preston track ${OPTS} "${DWC_URL}"\
   | preston dwc-stream ${OPTS}\
-  | grep "${CATALOG_NUMBER}[^a-zA-Z0-9]"\
+  | grep "${CATALOG_NUMBER}[^0-9]"\
   | jq --raw-output '[.["http://rs.tdwg.org/ac/terms/accessURI"],.["http://purl.org/dc/terms/identifier"]] | .[] '\
   | grep "http"\
   | sort\
