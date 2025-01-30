@@ -8,8 +8,8 @@
 
 set -xe
 
-CATALOG_NUMBER=${1:-"CASTYPE1652"}
-DWC_URL=${2:-"http://ipt.calacademy.org:8080/archive.do?r=type"}
+CATALOG_NUMBER=${1:-"UCSB-IZC00008208"}
+DWC_URL=${2:-"https://ecdysis.org/content/dwca/UCSB-IZC_DwC-A.zip"}
 
 DIST_DIR=dist/${CATALOG_NUMBER}
 mkdir -p "${DIST_DIR}"
